@@ -1,20 +1,22 @@
 
-complete <- function(directory, id=1:322){
+complete <- function(directory, id=1:332){
   csv_files <- list.files(paste(getwd(),"/week2/",directory, sep=""))
-  curr_csv_files <- csv_files[id]
-  mat <- matrix(, nrow=length(id), ncol=2)
-  for(i in seq_along(curr_csv_files)){
-    tmp_file <- read.csv(paste(getwd(),"/week2/specdata/",curr_csv_files[i], sep=""))
-    mat[i, 1] <- id[i]
-    mat[i, 2] <- nrow(na.omit(tmp_file))
+  df <- data.frame()
+  for(i in id){
+    tmp_file <- read.csv(paste(getwd(),"/week2/specdata/",csv_files[i], sep=""))
+    df <- rbind(df, tmp_file)    
   }
-  colnames(mat) <- c("id", "nobs")
-  
-  return(data.frame(mat))
+  df <- df[!is.na(df$sulfate & df$nitrate),]
+  ids <- numeric(length(id))
+  nobs <- numeric(length(id))
+  pos <- 0
+  for(i in id){
+    pos <- pos+1
+    ids[pos] <- i
+    nobs[pos] <- sum(df$ID == i)
+    
+  }
+  ids <- ids[1:pos]
+  nobs <- nobs[1:pos]
+  return(data.frame(ids, nobs))
 }
-
-complete("specdata", id=c(2, 4, 8, 10, 12))
-complete("specdata", 30:25)
-complete("specdata", 3)
-
-
