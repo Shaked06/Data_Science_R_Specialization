@@ -1,0 +1,28 @@
+{
+    "id": "97FAD7A7",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1676544946269.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "id": "0a60010e9455431aab1281bd65088b8b",
+        "name": "vect",
+        "title": "vect",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 0,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1676544946269,
+    "read_only": false,
+    "read_only_alternatives": []
+}
