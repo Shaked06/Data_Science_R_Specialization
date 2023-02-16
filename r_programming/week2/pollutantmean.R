@@ -17,5 +17,4 @@ pollutantmean("specdata", "nitrate", 23)
 pollutantmean("specdata", "sulfate", 1:10)
 pollutantmean("specdata", "sulfate", 34)
 pollutantmean("specdata", "nitrate")
-cc <- complete("specdata", c(6, 10, 20, 34, 100, 200, 310))
 
